@@ -8,7 +8,14 @@ const cors = require("cors");
 const interviewRoutes = require("./routes/interviewRoutes");
 connectDB();
 const app = express();
-app.use(cors());
+
+const corsOptions = {
+    origin: 'https://interview-app-frontend-pnuz.vercel.app', // Your actual Vercel link
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    credentials: true, // Allow cookies or headers if needed
+    optionsSuccessStatus: 200
+};
+app.use(cors(corsOptions));
 
 
 //middleware to read json
@@ -102,6 +109,6 @@ app.post('/test', (req,res)=>{
 })
 
 //port
-app.listen(5000, ()=>{
+app.listen(process.env.PORT || 5000, ()=>{
     console.log("Server is running on port: 5000");
 })
