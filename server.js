@@ -10,7 +10,7 @@ connectDB();
 const app = express();
 
 const corsOptions = {
-    origin: 'https://interview-app-frontend-pnuz.vercel.app', // Your actual Vercel link
+    origin: 'https://interview-app-frontend-gamma.vercel.app/', // Your actual Vercel link
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     credentials: true, // Allow cookies or headers if needed
     optionsSuccessStatus: 200
